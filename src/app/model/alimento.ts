@@ -1,0 +1,35 @@
+export class Alimento {
+ id: number;
+ nombre: string;
+ estado: string;
+ cal: number;
+ hidratosdecarbono: number	;
+ h2o: number;
+ noespecifico: number;
+ grasas: number	;
+ proteinas: number;
+ vitamina: number;
+ vitaminb2: number;
+ vitaminb1: number;
+ vitaminc: number;
+ niac: number;
+ cobre: number;
+ potasio: number;
+ sodio: number;
+ azufre: number;
+ calcio: number;
+ fosforo: number;
+ hierro: number;
+ magnesio: number;
+ cloro: number;
+ met: number;
+ lis: number;
+  leu: number	;
+ illeu: number;
+ tre: number;
+ tri: number;
+ fen: number	;
+ val: number;
+ acid: number;
+alcal: number;
+}

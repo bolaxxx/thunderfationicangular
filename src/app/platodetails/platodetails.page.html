@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-label>
+      <ion-row>
+        <ion-title>Detalle del Plato {{plato.nombre|titlecase}}</ion-title>
+
+        <ion-button float-right fill="clear" (click)="dismiss()">
+          Cerrar
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </ion-row>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title>Ingredientes</ion-title>
+  <ion-list>
+    <ion-grid>
+      <ion-row *ngFor="let ingrediente of plato.ingredientes">
+        <ion-col>{{ingrediente.alimento.nombre|titlecase}}</ion-col>
+        <ion-col>{{ingrediente.cantidad|number : '1.2-2'}}</ion-col>
+      </ion-row>
+    </ion-grid> </ion-list
+  ><ion-item>
+    <ion-label>Esta es la receta :</ion-label>
+    <ion-text>{{plato.receta}}</ion-text>
+  </ion-item>
+</ion-content>

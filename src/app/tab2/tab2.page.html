@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lista de la compra
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    
+    <ion-item *ngFor="let ingrediente of ingredientes">
+      <ion-label>{{ingrediente.alimento.nombre | titlecase}} {{ingrediente.alimento.estado | titlecase}}</ion-label>
+      <p>{{ingrediente.cantidad| number : '1.2-2' }} gramos</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

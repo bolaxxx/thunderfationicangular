@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de posibles cambios </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button 
+    text="Atras"
+    icon="arrow-back">
+      </ion-back-button> 
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-title>Platos</ion-title></ion-item>
+    
+    <ion-list>
+      <ion-grid>
+      <ion-row *ngFor="let plato of cambiosPosibles">
+     
+        <ion-col>
+          <ion-label>
+          <ion-icon src="/assets/dish.svg" size="100px">
+          </ion-icon>
+      {{plato.nombre|titlecase}}
+    </ion-label>
+    </ion-col>
+  <ion-col align-self-end float-right >
+      <ion-buttons align-items-end float-right >
+        <ion-button (click)="viewDetails(plato)">  Receta  </ion-button>
+     </ion-buttons>
+    
+    </ion-col>
+  
+     
+    </ion-row>
+  </ion-grid>
+    </ion-list>
+  
+</ion-content>

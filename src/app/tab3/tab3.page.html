@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Plan dieta
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row *ngFor="let dia of plan.dias; let i = index" (click)="openPage(i)">
+    <ion-col>
+      <span>
+        <ion-text>{{ dia.fecha | date: "dd-MM-yyyy" }}</ion-text>
+        <ion-icon
+          [name]="selectedDay == i ? 'arrow-down' : 'arrow-forward'"
+          *ngIf="dia.comidas"
+          float-right
+        ></ion-icon>
+      </span>
+
+      <ion-list no-lines [hidden]="selectedDay != i">
+        <ion-item
+          no-border
+          *ngFor="let comida of dia.comidas; let i2 = index"
+          text-wrap
+          (click)="gocomida(comida)"
+        >
+          <ion-row>
+            <ion-col col-10 class="menu-name"
+              ><span ion-text color="color2"
+                ><ion-label
+                  >&nbsp;{{ comida.hora }}
+                  <ion-icon
+                    [name]="selectedMeal == i2 ? 'arrow-down' : 'arrow-forward'"
+                    *ngIf="comida.platos"
+                    float-right
+                  ></ion-icon></ion-label></span
+            ></ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-content>
