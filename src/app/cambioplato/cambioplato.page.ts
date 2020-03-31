@@ -19,20 +19,22 @@ export class CambioplatoPage implements OnInit {
 
             cambiosPosibles: PlatoPredeterminado[];
   ngOnInit() {
+    console.log('hola he llegado ');
     this.comidaService.getPosiblesCambios(Number(this.router.snapshot.paramMap.get('id'))).subscribe(
-      element=>this.cambiosPosibles=element);
+      element => {console.log(JSON.stringify(element));
+                  this.cambiosPosibles = element; });
   }
   async viewDetails(plato: PlatoPredeterminado) {
     const modal: HTMLIonModalElement =
        await this.modalController.create({
           component: PlatodetailsPage,
-          componentProps: { plato: plato }
+          componentProps: { plato }
     });
 
 
     await modal.present();
-    modal.onDidDismiss().then(data=>{
-     console.log(data)
+    modal.onDidDismiss().then(data => {
+     console.log(data);
     });
   }
 }
